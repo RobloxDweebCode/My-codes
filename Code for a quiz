@@ -1,0 +1,91 @@
+while True: # The while loop. This will make the code loop for ever.
+    from time import sleep as s # Importing the sleep thingy.
+
+    def clr(): # Define clr(). This will define clr().
+        print('\n' * 25) # As almost you all know, '\n' makes a new line. Here, We are multiplying it by 25, So it will make 25 new lines.
+
+    '''
+    REMEMBER THIS!
+    In the questions, I have put three things. First, the question. Second, The answer. Third, The award (Points).
+    '''
+    
+    foodqs = [ # The food questions.
+        ["\nWhich one is good for your health? \n\na. Apple \n\nb. Pizza \n\nc. Burger", "a", 30],
+        ["\nWhich one is not a food? \n\na. Air conditioner \n\nb. Banana \n\nc. Cabbage", "a", 30],
+        ["\nWhich one is good for your health? \n\na. Soda \n\nb. French fries \n\nc. Tomato", "c", 30]
+    ]
+
+    mathqs = [ # The math questions.
+        ["\nWhich one is the correct answer of 24 x 2? \n\na. 48 \n\nb. 35 \n\nc. 25", "a", 60],
+        ["\nWhat is 32 + 33? \n\na. 21 \n\nb. 65 \n\nc. 32", "b", 60],
+        ["\nWhat is 24 - 8? \n\na. 23 \n\nb. 32 \n\nc. 16", "c", 60]
+    ]
+
+    sportsqs = [ # The sports questions.
+        ["\nWhich sport is the most famous one? \n\na. Soccer/Football \n\nb. Basketball. \n\nc. Dodgeball.","a",90],
+        ["\nWhich one of these sports is Michael Jordan the best at? \n\na. Soccer/Football. \n\nb. Cricket. \n\nc. Basketball. ", "c", 90],
+        ["\nWhich one of these sports is India's favourite sport? \n\na. Dodgeball. \n\nb. Cricket.  \n\nc. Basketball.", "b", 90]
+    ]
+
+    polqs = [ # The politics questions.
+        ["\nWho is the president of India? \n\na. Ram Nath Kovind.  \n\nb. Narendra Modi.  \n\nc. Virat Kohli.", "a", 120],
+        ["\nWho is the president of America? \n\na. Vladimir Putin. \n\nb. Donald Trump. \n\nc. Scott Morrison. ", "b", 120],
+        ["\nWho was the first president of India? \n\na. Fakhruddin Ali Ahmed.  \n\nb. Sarvepalli Radhakrishnan.  \n\nc. Rajendra Prasad. ", "c", 120]
+    ]
+
+    codeqs = [ # The coding questions.
+        ["\nWhich one of these is the most famous computer language? \n\na. JavaScript. \n\nb. Lua. \n\nc. Python.", "c", 150],
+        ["\nWhich one of these is the hardest computer language? \n\na. JavaScript. \n\nb. Malbolge. \n\nc. C#.", "b", 150],
+        ["\nWhich computer language did Guido Van Rossum invent? \n\na. Python. \n\nb. CSS. \n\nc.  Go.", "a", 150]
+    ]
+
+    # Below is a list of lists
+    loc = [foodqs, mathqs, sportsqs, polqs, codeqs]
+    # Above is a list of lists
+
+    userPoints = 0 # The points.
+
+    '''
+    Below this comment is the main script.
+    '''
+    
+    for scq in loc: # A for loop in our list of lists 
+            for each_q in scq: # a for loop in "scq" 
+                print(each_q[0]) # <- This will say the question.
+                ans = input("\nWhich answer did you guess? Enter it here: ") # This is an input variable in which the user has to say the answer.
+                print("\nLets see if",ans,"is the answer.") # This is not necessary. This is just the print function saying the input variable that the user inputted.
+                s(2.5) # This will make the script wait.
+                if ans == each_q[1].upper() or ans == each_q[1]: # If, The input variable that the user inputted is true.
+                    print("\nCorrect answer!!! You get",each_q[2],"points!!!") # This input function will let the user know that they inputted the right answer.
+                    clr() # The clear function that we made.
+                    userPoints += each_q[2] # This will add the points.
+                elif ans != each_q[2]: # Else, if the input variable that the user inputted is false.
+                    print("\nNope. Wrong answer.") # This input function will let the user know that the user inputted the right answer.
+                    clr() # The clear function.
+
+    '''
+    Below this comment, It will let the user know that if they won or not.
+    '''
+
+    if userPoints > 400: # If their points are greater than 400:
+            print("\nGood job! \nYou win.") # This will let the user know if they won.
+            again = input('Wanna play again? (Y/N)\n') # This is an input variable and it will say if they want to play again.
+            if again == 'n' or again == 'n'.upper(): # If they said no, then:
+                print('Sure.') # I don't think this is useful.
+                break # This will break the while loop.
+            elif again == 'y' or again == 'y'.upper(): # Else, If they said yes, then:
+                print('Sure.') # I'm not saying that again.
+                continue # This will repeat the while loop.
+    elif userPoints < 400: # Ok, I am not saying it all again.
+            print("\nYou lost. \nGo home and see five kid channels.")
+            again2 = input('Want to prove you aren\'t a first grader? (Y/N)\n')
+            if again2 == 'n' or again2 == 'n'.upper():
+                print('OK. Sure.')
+                break
+            elif again2 == 'y' or again2 == 'y'.upper():
+                print('Sure.')
+                continue          
+
+'''
+END OF SCRIPT
+'''
